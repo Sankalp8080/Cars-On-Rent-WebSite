@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="CarsR.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>CARS-On-Rent</title>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- site metas -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link href="<%= ResolveUrl("~/css/bootstrap.min.css") %>" rel="stylesheet" />
+    <!-- style css -->
+    <link href="<%= ResolveUrl("~/css/style.css") %>" rel="stylesheet" />
+    <!-- Responsive -->
+    <link href="<%= ResolveUrl("~/css/responsive.css") %>" rel="stylesheet" />
+    <!-- fevicon -->
+    <link href="<%= ResolveUrl("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
+    <!-- font css -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Scrollbar Custom CSS -->
+    <link href="<%= ResolveUrl("~/css/jquery.mCustomScrollbar.min.css") %>" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <!-- header section start -->
+            <div class="header_section">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="images/logo.png" style="height: 60px;"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#footer">Services</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#vehicles">Vehicles</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#client">Client</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- header section end -->
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            <!-- choose section start -->
+            <div class="choose_section layout_padding" id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="choose_taital">WHY CHOOSE US</h1>
+                        </div>
+                    </div>
+                    <div class="choose_section_2">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="icon_1">
+                                    <img src="images/icon-1.png">
+                                </div>
+                                <h4 class="safety_text">SAFETY & SECURITY</h4>
+                                <p class="ipsum_text">variations of passages of Lorem Ipsum available, but the majority have </p>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="icon_1">
+                                    <img src="images/icon-2.png">
+                                </div>
+                                <h4 class="safety_text">Online Booking</h4>
+                                <p class="ipsum_text">variations of passages of Lorem Ipsum available, but the majority have </p>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="icon_1">
+                                    <img src="images/icon-3.png">
+                                </div>
+                                <h4 class="safety_text">Best Drivers</h4>
+                                <p class="ipsum_text">variations of passages of Lorem Ipsum available, but the majority have </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- choose section end -->
+            <!-- footer section start -->
+            <div class="footer_section layout_padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footeer_logo">
+                                <img src="images/logo.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_section_2">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="footer_taital">Subscribe Now</h4>
+                                <p class="footer_text">There are many variations of passages of Lorem Ipsum available,</p>
+                                <div class="form-group">
+                                    <textarea class="update_mail" placeholder="Enter Your Email" rows="5" id="comment" name="Enter Your Email"></textarea>
+                                    <div class="subscribe_bt"><a href="#">Subscribe</a></div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h4 class="footer_taital">Information</h4>
+                                <p class="lorem_text">There are many variations of passages of Lorem Ipsum available, but the majority </p>
+                            </div>
+                            <div class="col">
+                                <h4 class="footer_taital">Helpful Links</h4>
+                                <p class="lorem_text">There are many variations of passages of Lorem Ipsum available, but the majority </p>
+                            </div>
+                            <div class="col">
+                                <h4 class="footer_taital">Invesments</h4>
+                                <p class="lorem_text">There are many variations of passages of Lorem Ipsum available, but the majority </p>
+                            </div>
+                            <div class="col">
+                                <h4 class="footer_taital">Contact Us</h4>
+                                <div class="location_text"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_15">Location</span></a></div>
+                                <div class="location_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_15">(+71) 8522369417</span></a></div>
+                                <div class="location_text"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_15">demo@gmail.com</span></a></div>
+                                <div class="social_icon">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer section end -->
+
+            <!-- copyright section start -->
+            <div class="copyright_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p class="copyright_text">2024 All Rights Reserved. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- copyright section end -->
+
+            <a href="#home" class="btn btn-secondary btn-floating">
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5" viewBox="0 0 384 512">
+                    <path fill="#ffffff" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+                </svg></a>
+            <!-- Javascript files-->
+            <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.min.js") %>"></script>
+            <script type="text/javascript" src="<%= ResolveUrl("~/js/popper.min.js") %>"></script>
+            <script type="text/javascript" src="<%= ResolveUrl("~/js/bootstrap.bundle.min.js") %>"></script>
+            <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery-3.0.0.min.js") %>"></script>
+            <script type="text/javascript" src="<%= ResolveUrl("~/js/plugin.js") %>"></script>
+            <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.mCustomScrollbar.concat.min.js") %>"></script>
+            <script type="text/javascript" src="<%= ResolveUrl("~/js/custom.js") %>"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        </div>
+    </form>
+</body>
+</html>
