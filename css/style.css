@@ -534,6 +534,10 @@ span.current {
 .search_btn {
     width: 170px;
     float: left;
+    background-color: #fe6029;
+    height:50px;
+    color:white;
+    font-weight:bold;
 }
 
 .search_btn a {
@@ -553,6 +557,35 @@ span.current {
     color: #363636;
     background-color: #ffffff;
 }
+
+
+
+.search_btn1 {
+    width: 170px;
+    float: left;
+    background-color: white;
+    height: 50px;
+    color: black;
+    font-weight: bold;
+}
+
+    .search_btn1 a {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #fefefd;
+        background-color: black;
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+
+        .search_btn1 a:hover {
+            color: white;
+            background-color: black;
+        }
 
 
 /* select box section end */
@@ -1001,7 +1034,7 @@ textarea#comment.massage-bt::placeholder {
 .social_icon li a {
     float: left;
     padding: 2px 7px;
-    background-color: #ffffff;
+    background-color: #111111;
     color: #2e2e2e;
     border-radius: 100%;
     font-size: 20px;

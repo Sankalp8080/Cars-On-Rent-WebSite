@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="CarsR.index" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -97,44 +98,56 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="search_taital">Search Your Best Cars</h1>
+                    <asp:UpdatePanel ID="updatepanel1" runat="server">
+                        <ContentTemplate>
 
-                    <!-- select box section start -->
-                    <div class="container">
-                        <div class="select_box_section">
-                            <div class="select_box_main">
-                                <div class="row">
-                                    <div class="col-md-3 select-outline">
-                                        <select class="mdb-select md-form md-outline colorful-select dropdown-primary">
-                                            <option value="" disabled selected>Any Brand</option>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3 select-outline">
-                                        <select class="mdb-select md-form md-outline colorful-select dropdown-primary">
-                                            <option value="" disabled selected>Any type</option>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3 select-outline">
-                                        <select class="mdb-select md-form md-outline colorful-select dropdown-primary">
-                                            <option value="" disabled selected>Price</option>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="search_btn"><a href="#">Search Now</a></div>
+                            <!-- select box section start -->
+                            <div class="container">
+                                <div class="select_box_section">
+                                    <div class="select_box_main">
+                                        <div class="row">
+                                            <div class="col-md-3 select-outline">
+                                                <asp:UpdatePanel ID="updatepanel3" runat="server">
+                                                    <ContentTemplate>
+                                                        <asp:DropDownList ID="ddlbrand" runat="server" CssClass="mdb-select md-form md-outline colorful-select dropdown-primary">
+                                                            <asp:ListItem Text="--Select Brand--" Value="0" Selected="True"></asp:ListItem>
+                                                        </asp:DropDownList>
+
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                            </div>
+
+                                            <div class="col-md-3 select-outline">
+                                                <asp:UpdatePanel runat="server" ID="updatepanel4">
+                                                    <ContentTemplate>
+                                                        <asp:DropDownList ID="ddltype" runat="server" CssClass="mdb-select md-form md-outline colorful-select dropdown-primary">
+                                                            <asp:ListItem Text="--Select Type--" Value="0" Selected="True"></asp:ListItem>
+
+                                                        </asp:DropDownList>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                            </div>
+
+                                            <div class="col-md-3 select-outline">
+                                                <asp:UpdatePanel ID="updatepanel5" runat="server">
+                                                    <ContentTemplate>
+                                                        <asp:DropDownList runat="server" ID="ddlprice" CssClass="mdb-select md-form md-outline colorful-select dropdown-primary">
+                                                            <asp:ListItem Text="--Select Price--" Value="0" Selected="True"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <asp:Button runat="server" ID="btnSearch" CssClass="search_btn" Text="Search Now" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- select box section end -->
+                            <!-- select box section end -->
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
             </div>
         </div>
@@ -331,10 +344,14 @@
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#custom_slider" role="button" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 448 512">
+                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                    </svg>
                 </a>
                 <a class="carousel-control-next" href="#custom_slider" role="button" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 448 512">
+                        <path fill="#f0f0f0" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -351,17 +368,25 @@
         </div>
         <div class="container">
             <div class="contact_section_2">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="mail_section_1">
-                            <input type="text" class="mail_text" placeholder="Name" name="Name">
-                            <input type="text" class="mail_text" placeholder="Email" name="Email">
-                            <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number">
-                            <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                            <div class="send_bt"><a href="#">Send</a></div>
+                <asp:UpdatePanel ID="updatepanel2" runat="server">
+                    <ContentTemplate>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mail_section_1">
+                                    <asp:TextBox ID="txtName" runat="server" placeholder="Name" CssClass="mail_text"></asp:TextBox>
+                                    <asp:TextBox ID="txtEmail" runat="server" placeholder="Email" CssClass="mail_text"></asp:TextBox>
+                                    <asp:TextBox ID="txtPhone" runat="server" placeholder="Phone" CssClass="mail_text"></asp:TextBox>
+                                    <asp:TextBox ID="txtMessage" runat="server" placeholder="Message" CssClass="mail_text" TextMode="MultiLine" MaxLength="10"></asp:TextBox>
+                                    <div class="row">
+
+                                        <div class="send_bt"><a href="#">Send</a></div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
         </div>
     </div>
