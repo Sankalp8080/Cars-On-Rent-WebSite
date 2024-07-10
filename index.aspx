@@ -10,7 +10,9 @@
             </div>
         </div>
     </div>
-    <!-- banner section start -->
+    <asp:UpdatePanel ID="update" runat="server">
+        <ContentTemplate>
+             <!-- banner section start -->
     <div class="banner_section layout_padding" id="home">
         <div class="container">
             <div class="row">
@@ -93,65 +95,71 @@
         </div>
     </div>
     <!-- about section end -->
-    <div class="search_section" id="vehicles">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="search_taital">Search Your Best Cars</h1>
-                    <asp:UpdatePanel ID="updatepanel1" runat="server">
-                        <ContentTemplate>
+    <asp:UpdatePanel ID="up" runat="server">
+        <ContentTemplate>
+            <div class="search_section" id="vehicles">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="search_taital">Search Your Best Cars</h1>
+
 
                             <!-- select box section start -->
                             <div class="container">
-                                <div class="select_box_section">
-                                    <div class="select_box_main">
-                                        <div class="row">
-                                            <div class="col-md-3 select-outline">
-                                                <asp:UpdatePanel ID="updatepanel3" runat="server">
-                                                    <ContentTemplate>
-                                                        <asp:DropDownList ID="ddlbrand" runat="server" CssClass="mdb-select md-form md-outline colorful-select dropdown-primary">
-                                                            <asp:ListItem Text="--Select Brand--" Value="0" Selected="True"></asp:ListItem>
-                                                        </asp:DropDownList>
+                                <asp:UpdatePanel ID="updatepanel1" runat="server">
+                                    <ContentTemplate>
+                                        <div class="select_box_section">
 
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                            </div>
+                                            <div class="select_box_main">
+                                                <div class="row">
+                                                    <div class="col-md-3 select-outline">
+                                                        <asp:UpdatePanel ID="updatepanel3" runat="server">
+                                                            <ContentTemplate>
+                                                                <asp:DropDownList ID="ddlbrand" runat="server" AutoPostBack="true" CssClass="mdb-select md-form md-outline colorful-select dropdown-primary">
+                                                                    <asp:ListItem Text="--Select Brand--" Value="0" Selected="True"></asp:ListItem>
+                                                                </asp:DropDownList>
+                                                            </ContentTemplate>
+                                                        </asp:UpdatePanel>
+                                                    </div>
 
-                                            <div class="col-md-3 select-outline">
-                                                <asp:UpdatePanel runat="server" ID="updatepanel4">
-                                                    <ContentTemplate>
-                                                        <asp:DropDownList ID="ddltype" runat="server" CssClass="mdb-select md-form md-outline colorful-select dropdown-primary">
-                                                            <asp:ListItem Text="--Select Type--" Value="0" Selected="True"></asp:ListItem>
+                                                    <div class="col-md-3 select-outline">
+                                                        <asp:UpdatePanel runat="server" ID="updatepanel4">
+                                                            <ContentTemplate>
+                                                                <asp:DropDownList ID="ddltype" runat="server" CssClass="mdb-select md-form md-outline colorful-select dropdown-primary">
+                                                                    <asp:ListItem Text="--Select Type--" Value="0" Selected="True"></asp:ListItem>
 
-                                                        </asp:DropDownList>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                            </div>
+                                                                </asp:DropDownList>
+                                                            </ContentTemplate>
+                                                        </asp:UpdatePanel>
+                                                    </div>
 
-                                            <div class="col-md-3 select-outline">
-                                                <asp:UpdatePanel ID="updatepanel5" runat="server">
-                                                    <ContentTemplate>
-                                                        <asp:DropDownList runat="server" ID="ddlprice" CssClass="mdb-select md-form md-outline colorful-select dropdown-primary">
-                                                            <asp:ListItem Text="--Select Price--" Value="0" Selected="True"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
+                                                    <div class="col-md-3 select-outline">
+                                                        <asp:UpdatePanel ID="updatepanel5" runat="server">
+                                                            <ContentTemplate>
+                                                                <asp:DropDownList runat="server" ID="ddlprice" CssClass="mdb-select md-form md-outline colorful-select dropdown-primary">
+                                                                    <asp:ListItem Text="--Select Price--" Value="0" Selected="True"></asp:ListItem>
+                                                                </asp:DropDownList>
+                                                            </ContentTemplate>
+                                                        </asp:UpdatePanel>
 
-                                            </div>
-                                            <div class="col-md-3">
-                                                <asp:Button runat="server" ID="btnSearch" CssClass="search_btn" Text="Search Now" />
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <asp:Button runat="server" ID="btnSearch" CssClass="search_btn" Text="Search Now" />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
                             </div>
                             <!-- select box section end -->
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
     <!-- gallery section start -->
     <div class="gallery_section layout_padding">
         <div class="container">
@@ -391,4 +399,7 @@
         </div>
     </div>
     <!-- contact section end -->
+        </ContentTemplate>
+    </asp:UpdatePanel>
+   
 </asp:Content>

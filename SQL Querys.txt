@@ -1,0 +1,104 @@
+﻿CREATE DATABASE CarOnRentDB
+GO
+
+USE CarOnRentDB
+GO
+
+CREATE TABLE UserContact
+(
+	slno INT IDENTITY(1,1),
+	uname VARCHAR(50),
+	phone VARCHAR(50),
+	email VARCHAR(100),
+	comment VARCHAR(255),
+	createdt DATETIME2,
+	commentcount INT 
+)
+GO
+
+CREATE TABLE UserSubscriber
+(
+	slno INT IDENTITY(1,1),
+	email VARCHAR(100),
+	issubscribe INT DEFAULT 0,
+	createdt datetime2
+)
+GO
+
+CREATE TABLE CarMast
+(
+	slno INT IDENTITY(1,1),
+	carnm VARCHAR(20),
+	brand VARCHAR(20),
+	cartype VARCHAR(20),
+	price DECIMAL(18,2),
+	createdt DATETIME2,
+	createid INT,
+	deldt DATETIME2,
+	delid INT,
+	modidt DATETIME2,
+	modiid INT,
+	carimage NVARCHAR(MAX)
+)
+GO
+
+CREATE TABLE UserMast
+(
+	slno INT IDENTITY(1,1),
+	uname VARCHAR(20),
+	phone VARCHAR(20),
+	email VARCHAR(100),
+	createdt DATETIME2,
+	createid INT,
+	delid INT,
+	deldt DATETIME2,
+	modidt DATETIME2,
+	modiid INT
+)
+GO
+
+CREATE PROC AddUserContact -- AddUserContact 'ABC','7897897890','abc@gmail.com','abcde'
+	@uname VARCHAR(20),
+	@phone VARCHAR(20),
+	@email VARCHAR(100),
+	@comment VARCHAR(100)
+AS
+BEGIN
+	DECLARE @count INT,
+			@out INT
+	SET @count = (SELECT TOP 1 commentcount from UserContact where uname =@uname and email =@email order by createdt desc)
+	IF @count IS NULL
+		SET @count =0
+	IF (@count < 3)
+	BEGIN
+		INSERT INTO UserContact (uname,phone,email,comment,createdt,commentcount)
+		SELECT @uname,@phone,@email,@comment,GETDATE(),@count+1
+		SET @out = 1
+	END
+	ELSE
+	BEGIN 
+		SET @out = 0
+	END
+	SELECT @out
+END
+GO
+
+CREATE PROC GetSubscribe
+@email varchar(100)
+AS
+BEGIN
+	DECLARE @out INT
+	IF EXISTS (SELECT 1 FROM UserSubscriber WHERE email =@email and issubscribe = 1)
+	BEGIN
+		SET @out = 0
+	END
+	ELSE
+	BEGIN
+		INSERT INTO UserSubscriber (email,issubscribe,createdt)
+		SELECT @email ,1,GETDATE()
+		SET @out = 1
+	END
+	SELECT @out
+END
+GO
+ 
