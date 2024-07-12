@@ -106,8 +106,7 @@
 
                             <!-- select box section start -->
                             <div class="container">
-                                <asp:UpdatePanel ID="updatepanel1" runat="server">
-                                    <ContentTemplate>
+                               
                                         <div class="select_box_section">
 
                                             <div class="select_box_main">
@@ -149,8 +148,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
+                                  
                             </div>
                             <!-- select box section end -->
 

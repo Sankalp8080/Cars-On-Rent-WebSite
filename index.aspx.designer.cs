@@ -33,15 +33,6 @@ namespace CarsR
         protected global::System.Web.UI.UpdatePanel up;
 
         /// <summary>
-        /// updatepanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updatepanel1;
-
-        /// <summary>
         /// updatepanel3 control.
         /// </summary>
         /// <remarks>
