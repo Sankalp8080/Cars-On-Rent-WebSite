@@ -12,21 +12,23 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- bootstrap css -->
-    <link href="<%= ResolveUrl("~/css/bootstrap.min.css") %>" rel="stylesheet" />
-    <!-- style css -->
-    <link href="<%= ResolveUrl("~/css/style.css") %>" rel="stylesheet" />
-    <!-- Responsive -->
-    <link href="<%= ResolveUrl("~/css/responsive.css") %>" rel="stylesheet" />
-    <!-- fevicon -->
-    <link href="<%= ResolveUrl("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
-    <!-- font css -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <!-- Scrollbar Custom CSS -->
-    <link href="<%= ResolveUrl("~/css/jquery.mCustomScrollbar.min.css") %>" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+    <asp:PlaceHolder runat="server">
+        <!-- bootstrap css -->
+        <link href="<%= ResolveUrl("css/bootstrap.min.css") %>" rel="stylesheet" />
+        <!-- style css -->
+        <link href="<%= ResolveUrl("css/style.css") %>" rel="stylesheet" />
+        <!-- Responsive -->
+        <link href="<%= ResolveUrl("css/responsive.css") %>" rel="stylesheet" />
+        <!-- fevicon -->
+        <link href="<%= ResolveUrl("favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
+        <!-- font css -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <!-- Scrollbar Custom CSS -->
+        <link href="<%= ResolveUrl("css/jquery.mCustomScrollbar.min.css") %>" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <!-- Tweaks for older IEs-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+    </asp:PlaceHolder>
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
@@ -110,7 +112,7 @@
                                 <h4 class="footer_taital">Subscribe Now</h4>
                                 <p class="footer_text">There are many variations of passages of Lorem Ipsum available,</p>
                                 <div class="form-group">
-                                
+
                                     <asp:TextBox ID="comment" runat="server" placeholder="Enter Your Email" CssClass="update_mail"></asp:TextBox>
                                     <div class="subscribe_bt"><a href="#">Subscribe</a></div>
                                 </div>
@@ -203,16 +205,17 @@
             </div>
             <!-- copyright section end -->
 
-
-            <!-- Javascript files-->
-            <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.min.js") %>"></script>
-            <script type="text/javascript" src="<%= ResolveUrl("~/js/popper.min.js") %>"></script>
-            <script type="text/javascript" src="<%= ResolveUrl("~/js/bootstrap.bundle.min.js") %>"></script>
-            <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery-3.0.0.min.js") %>"></script>
-            <script type="text/javascript" src="<%= ResolveUrl("~/js/plugin.js") %>"></script>
-            <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.mCustomScrollbar.concat.min.js") %>"></script>
-            <script type="text/javascript" src="<%= ResolveUrl("~/js/custom.js") %>"></script>
-            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <asp:PlaceHolder runat="server">
+                <!-- Javascript files-->
+                <script type="text/javascript" src="<%= ResolveUrl("js/jquery.min.js") %>"></script>
+                <script type="text/javascript" src="<%= ResolveUrl("js/popper.min.js") %>"></script>
+                <script type="text/javascript" src="<%= ResolveUrl("js/bootstrap.bundle.min.js") %>"></script>
+                <script type="text/javascript" src="<%= ResolveUrl("js/jquery-3.0.0.min.js") %>"></script>
+                <script type="text/javascript" src="<%= ResolveUrl("js/plugin.js") %>"></script>
+                <script type="text/javascript" src="<%= ResolveUrl("js/jquery.mCustomScrollbar.concat.min.js") %>"></script>
+                <script type="text/javascript" src="<%= ResolveUrl("js/custom.js") %>"></script>
+                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            </asp:PlaceHolder>
         </div>
     </form>
 </body>
